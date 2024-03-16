@@ -6,7 +6,7 @@ import NavBar from './component/NavBar'
 import RecipeCard from './component/RecipeCard'
 
 import {  toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
    
@@ -25,17 +25,16 @@ function App() {
 
   const handleWantToCook = (card) =>{
   
-    const remainingCard = cards.find(c => c.recipe_id == card.recipe_id)
+    const remainingCard = cards.find(c => c['recipe_id'] == card['recipe_id'])
     
     if(!remainingCard){
       setCards([...cards,card])
-      toast.success(card.recipe_name + ' is add')
+      
     }
    else{
-    toast.error(card.recipe_name + ' is already selected')
-   }
+    toast.error(card['recipe_name'] , ' is already selected')
 
-    
+   }
 
     
   }
@@ -73,11 +72,11 @@ function App() {
       <div className='grid grid-cols-1 lg:grid-cols-2 w-7/12 gap-4'>
         
         {
-          recipeCard.map(card => <RecipeCard key={card.recipe_id} card = {card} handleWantToCook={handleWantToCook} />)
+          recipeCard.map(card => <RecipeCard key={card['recipe_id']} card = {card} handleWantToCook={handleWantToCook} />)
         }
       </div>
           {/* cooking card  */}
-      <CookingCard/>
+      <CookingCard cards={cards}/>
       </div>
       </main>
     </>
