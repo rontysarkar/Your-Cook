@@ -45,7 +45,8 @@ function App() {
 
     //  add card form currently cooking section 
 
-    
+    setAddCooking([...addCooking,card])
+
   }
 
 
@@ -85,7 +86,7 @@ function App() {
         }
       </div>
           {/* cooking card  */}
-      <CookingCard preparing= {preparing} cards={cards}/>
+      <CookingCard addCooking={addCooking} preparing= {preparing} cards={cards}/>
       </div>
       </main>
     </>

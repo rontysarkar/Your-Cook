@@ -1,9 +1,25 @@
+import { useState } from "react";
 import CurrentlyCooking from "./CurrentlyCooking";
 import WantToCook from "./WantToCook";
 import PropTypes from 'prop-types'
 
 
-const CookingCard = ({cards,preparing}) => {
+
+const CookingCard = ({cards,preparing,addCooking}) => {
+
+    const [totalTime,setTotalTime] = useState(0);
+    const [totalCalories,setTotalCalories] = useState(0)
+
+    const setTime = (time,calorie) =>{
+        const [times] = time.split(' ')
+        const [calories] = calorie.split(' ')
+
+        setTotalTime( totalTime + parseInt(times))
+        setTotalCalories( totalCalories + parseInt(calories))
+
+        
+        
+    }
    
     
     return (
@@ -29,7 +45,7 @@ const CookingCard = ({cards,preparing}) => {
              
                   
             <div>
-                <h1 className="border-b-2 text-2xl font-semibold pb-4  text-center mb-6">Currently cooking: 02</h1>
+                <h1 className="border-b-2 text-2xl font-semibold pb-4  text-center mb-6">Currently cooking: { addCooking.length}</h1>
            
                 <section className="table-fixed">
                     <div>
@@ -40,8 +56,15 @@ const CookingCard = ({cards,preparing}) => {
                          </div>
                     </div>
                <div>
-                    <CurrentlyCooking/>
-   
+               <ol className="list-decimal ml-8 ">
+                {
+                    addCooking.map(card=> <li key={card['recipe_id']}> <CurrentlyCooking  card = {card} setTime={setTime} /> </li> )
+                }
+                </ol>
+                <div className="flex justify-evenly  opacity-70 py-10">
+                    <h1 className="text-xl">Total Time = {totalTime} min </h1>
+                    <h1 className="text-xl">Total Calories = {totalCalories} calories</h1>
+                </div>
                </div>
           </section>
             </div>
@@ -51,7 +74,8 @@ const CookingCard = ({cards,preparing}) => {
 
 CookingCard.propTypes = {
     cards:PropTypes.array,
-    preparing:PropTypes.func
+    preparing:PropTypes.func,
+    addCooking:PropTypes.array
 }
 
 export default CookingCard;
