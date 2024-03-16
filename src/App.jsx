@@ -12,6 +12,7 @@ function App() {
    
   const [recipeCard, setRecipeCard] = useState([])
   const [cards,setCards] = useState([])
+  const [addCooking,setAddCooking] = useState([])
 
   useEffect(() =>{
     fetch('Items.json')
@@ -32,9 +33,17 @@ function App() {
       
     }
    else{
-    toast.error(card['recipe_name'] , ' is already selected')
-
+    toast.error( 'Already exist')
    }
+  }
+
+  const preparing = (card) =>{
+    // remove card form want to cook section 
+
+     const remainingCard =  cards.filter(c => c['recipe_id'] != card['recipe_id'] )
+     setCards([...remainingCard])
+
+    //  add card form currently cooking section 
 
     
   }
@@ -76,7 +85,7 @@ function App() {
         }
       </div>
           {/* cooking card  */}
-      <CookingCard cards={cards}/>
+      <CookingCard preparing= {preparing} cards={cards}/>
       </div>
       </main>
     </>
