@@ -2,8 +2,7 @@ import { FaFire } from "react-icons/fa";
 import { MdAccessTime } from "react-icons/md";
 import PropTypes from 'prop-types';
 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { Toaster } from 'react-hot-toast';
 
 
 const RecipeCard = ({card,handleWantToCook}) => {
@@ -49,7 +48,7 @@ const RecipeCard = ({card,handleWantToCook}) => {
 
           <div className="card-actions py-2">
             <button onClick={()=>handleWantToCook(card)} className="btn bg-green-400 rounded-full">Want to Cook</button>
-            <ToastContainer />
+            <Toaster />
           </div>
         </div>
     </div>

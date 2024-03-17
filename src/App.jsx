@@ -4,9 +4,8 @@ import './App.css'
 import CookingCard from './component/CookingCard'
 import NavBar from './component/NavBar'
 import RecipeCard from './component/RecipeCard'
+import toast from 'react-hot-toast';
 
-import {  toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
    
@@ -30,10 +29,11 @@ function App() {
     
     if(!remainingCard){
       setCards([...cards,card])
+      toast.success(card['recipe_name']+ " is Add")
       
     }
    else{
-    toast.error( 'Already exist')
+    toast.error(card['recipe_name'] + ' is Already exist')
    }
   }
 
