@@ -14,11 +14,11 @@ const WantToCook = ({card,preparing,index}) => {
         <table className='bg-gray-100 my-8 w-full'>
             <tbody>
                  <tr>
-                   <td className='text-xl pl-4 py-8 font-semiboldbold'>{count}</td>
-                   <td className='pl-4'>{recipe_name} </td>
-                   <td className='pl-10'>{preparing_time}</td>
-                   <td className='pl-8'>{calories}</td>
-                   <td><button onClick={() => preparing(card)} className="btn bg-green-400 rounded-full ">Preparing</button></td>
+                   <td className='text-xl px-2 lg:pl-4 py-8 font-semiboldbold'>{count}</td>
+                   <td className='lg:pl-4'>{recipe_name} </td>
+                   <td className='lg:pl-10'>{preparing_time}</td>
+                   <td className='lg:pl-8'>{calories}</td>
+                   <td><button onClick={() => preparing(card)} className="btn bg-green-400 rounded-full  ">Preparing</button></td>
                 </tr>   
             </tbody>
         </table>

@@ -13,13 +13,13 @@ const RecipeCard = ({card,handleWantToCook}) => {
 
     
     return (
-        <div className="card w-96 bg-base-100 shadow-xl border">
-        <figure className="px-10 pt-10">
-          <img src={recipe_image} alt="Shoes" className="rounded-xl" />
-        </figure>
+        <div className="card w-11/12 mx-auto lg:w-96 bg-base-100 shadow-xl border">
+          <figure className="px-10 pt-10">
+            <img src={recipe_image} alt="Shoes" className="rounded-xl" />
+          </figure>
         <div className="card-body  ">
-          <h2 className="card-title">{recipe_name}</h2>
-          <p className="opacity-50">{short_description}</p>
+           <h2 className="card-title">{recipe_name}</h2>
+           <p className="opacity-50">{short_description}</p>
 
 
           <div>

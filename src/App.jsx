@@ -54,7 +54,7 @@ function App() {
 
   return (
     <>
-      <header className='container mx-auto lg:px-32 py-10'>
+      <header className='container mx-auto lg:px-32 lg:py-10'>
       <NavBar></NavBar>
       </header>
       <main className='container mx-auto lg:px32 py-10 '>
@@ -76,10 +76,10 @@ function App() {
 
         </div>
 
-      <div className='flex flex-col lg:flex-row'>
+      <div className='flex flex-col gap-6 lg:flex-row'>
           {/*  Recipe Card  */}
 
-      <div className='grid grid-cols-1 lg:grid-cols-2 w-7/12 gap-4'>
+      <div className='grid grid-cols-1 lg:grid-cols-2 lg:w-7/12 gap-4'>
         
         {
           recipeCard.map(card => <RecipeCard key={card['recipe_id']} card = {card} handleWantToCook={handleWantToCook} />)

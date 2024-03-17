@@ -7,12 +7,13 @@ const CurrentlyCooking = ({card,setTime,index}) => {
 
     useEffect(()=>{
       return  setTime(preparing_time,calories)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
 
 
     return (
-        
+
         <table className='bg-gray-100 my-8 w-full'>
             <tbody>
                  <tr>
