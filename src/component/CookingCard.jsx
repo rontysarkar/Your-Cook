@@ -28,44 +28,48 @@ const CookingCard = ({cards,preparing,addCooking}) => {
             <div>
                 <h1 className="border-b-2 text-2xl font-semibold pb-4  text-center mb-6">Want to cook : {cards.length}</h1>
            
-                <div className="flex gap-32 ml-14 opacity-60 text-lg mb-8">
-                  <h1>Name</h1>
-                  <h1>Time</h1>
-                   <h1>Caloris</h1>
-                </div>
-                
-                <ol className="list-decimal ml-8 ">
-                {
-                    cards.map(card=> <li key={card['recipe_id']} > <WantToCook  card={card} preparing={preparing} /> </li> )
-                }
-                </ol>
-                
+                <table className="mb-8">
+                    <thead>
+                        <tr className="text-xl opacity-60 ">
+                             <th colSpan={2} className="px-14">Name</th>
+                             <th className="px-14">Time</th>
+                             <th className="px-14">Calories</th>
+                        </tr>
+                    </thead>
+                </table>
 
+                {
+                    cards.map((card,index)=>  <WantToCook  index={index} key={index} card={card} preparing={preparing} />  )
+                }
             </div>
-             
                   
             <div>
                 <h1 className="border-b-2 text-2xl font-semibold pb-4  text-center mb-6">Currently cooking: { addCooking.length}</h1>
            
                 <section className="table-fixed">
-                    <div>
-                        <div className="flex gap-28 ml-8 opacity-60 text-lg">
-                            <h1>Name</h1>
-                            <h1>Time</h1>
-                            <h1>calories</h1>
-                         </div>
+
+                <table>
+                    <thead>
+                        <tr className="text-xl opacity-60 mb-8 ">
+                             <th colSpan={2} className="px-16">Name</th>
+                             <th className="px-16">Time</th>
+                             <th className="px-16">Calories</th>
+                        </tr>
+                    </thead>
+
+                </table>
+
+                <div>
+                    {
+                      addCooking.map((card,index)=> <CurrentlyCooking key={index} index={index}  card = {card} setTime={setTime} />  )
+                    }
+
+                    <div className="flex justify-evenly  opacity-70 py-10">
+                        <h1 className="text-xl">Total Time = {totalTime} min </h1>
+                        <h1 className="text-xl">Total Calories = {totalCalories} calories</h1>
                     </div>
-               <div>
-               <ol className="list-decimal ml-8 ">
-                {
-                    addCooking.map(card=> <li key={card['recipe_id']}> <CurrentlyCooking  card = {card} setTime={setTime} /> </li> )
-                }
-                </ol>
-                <div className="flex justify-evenly  opacity-70 py-10">
-                    <h1 className="text-xl">Total Time = {totalTime} min </h1>
-                    <h1 className="text-xl">Total Calories = {totalCalories} calories</h1>
+
                 </div>
-               </div>
           </section>
             </div>
         </div>

@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types'
 
 
-const WantToCook = ({card,preparing}) => {
+const WantToCook = ({card,preparing,index}) => {
+    let count = 1 + index
     
     const {recipe_name,preparing_time,calories} = card;
     
@@ -9,18 +10,25 @@ const WantToCook = ({card,preparing}) => {
 
 
     return (
-        <div className=" flex gap-14 items-center justify-around bg-gray-100 my-8 py-4 rounded-full  ">
-                 <div> <p className=" opacity-70">{recipe_name}</p> </div>
-                 <div> <p className=" opacity-70">{preparing_time}</p></div>
-                 <div>  <p className=" opacity-70">{calories}</p></div>
-                 <div>  <button onClick={() => preparing(card)} className="btn bg-green-400 rounded-full ">Preparing</button></div>
-        </div>
+        
+        <table className='bg-gray-100 my-8 w-full'>
+            <tbody>
+                 <tr>
+                   <td className='text-xl pl-4 py-8 font-semiboldbold'>{count}</td>
+                   <td className='pl-4'>{recipe_name} </td>
+                   <td className='pl-10'>{preparing_time}</td>
+                   <td className='pl-8'>{calories}</td>
+                   <td><button onClick={() => preparing(card)} className="btn bg-green-400 rounded-full ">Preparing</button></td>
+                </tr>   
+            </tbody>
+        </table>
     );
 };
 
 WantToCook.propTypes = {
     card : PropTypes.object,
-    preparing:PropTypes.func
+    preparing:PropTypes.func,
+    index:PropTypes.number
 }
 
 export default WantToCook;

@@ -69,7 +69,7 @@ function App() {
 
       </main>
 
-      <main className='container mx-auto lg:32 mb-[600px]'>
+      <main className='container mx-auto lg:32 '>
       <div className='text-center py-12 '>
           <h1 className="text-4xl font-bold ">Our Recipes</h1>
           <p className='w-1/2 mx-auto py-4 text-gray-600 hidden md:flex'>In our restaurant, recipes are the cornerstone of our culinary journey. Each dish on our menu is crafted with meticulous attention to detail,</p>
