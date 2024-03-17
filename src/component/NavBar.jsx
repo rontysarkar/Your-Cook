@@ -1,4 +1,5 @@
 import { CiSearch } from "react-icons/ci";
+import { IoPersonCircleOutline } from "react-icons/io5";
 const NavBar = () => {
     return (
         <div className="navbar flex justify-evenly">
@@ -26,8 +27,9 @@ const NavBar = () => {
 
     <div className="dropdown dropdown-end">
       <div tabIndex="0" role="button" className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full bg-green-400 p-2">
-          <img alt="Tailwind CSS Navbar component" src="/src/assets/images/victor.png" />
+        <div className="w-12 rounded-full bg-green-400 p-2">
+          <IoPersonCircleOutline size="2em" />
+
         </div>
       </div>
       <ul tabIndex="0" className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
