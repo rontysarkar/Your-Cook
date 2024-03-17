@@ -13,7 +13,7 @@ const RecipeCard = ({card,handleWantToCook}) => {
 
     
     return (
-        <div className="card w-11/12 mx-auto lg:w-96 bg-base-100 shadow-xl border">
+        <div className="card w-11/12 mx-auto 2xl:w-96 bg-base-100 shadow-xl border">
           <figure className="px-10 pt-10">
             <img src={recipe_image} alt="Shoes" className="rounded-xl" />
           </figure>

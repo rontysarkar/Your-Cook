@@ -54,10 +54,10 @@ function App() {
 
   return (
     <>
-      <header className='container mx-auto lg:px-32 lg:py-10'>
+      <header className='container 2xl:px-32  mx-auto  lg:py-10'>
       <NavBar></NavBar>
       </header>
-      <main className='container mx-auto lg:px32 py-10 '>
+      <main className='container mx-auto 2xl:px32 py-10 '>
         <div className="bg-img h-40 md:h-80 lg:h-[550px] my-8 bg-no-repeat bg-center bg-contain flex flex-col justify-center items-center ">
             <h1 className='text-sm md:text-lg xl:text-4xl text-center font-bold  text-white w-1/2  '>Discover an exceptional cooking class tailored for you!</h1>
             <p className='text-sm w-1/2 mx-auto text-center py-4 text-gray-300 hidden lg:flex'>Embark on a culinary adventure designed just for you with our exceptional cooking class. Whether you re a novice or a seasoned chef, our expert instructors will tailor the experience to your specific interests, dietary requirements, and skill level</p>

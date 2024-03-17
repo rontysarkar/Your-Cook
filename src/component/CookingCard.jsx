@@ -31,9 +31,9 @@ const CookingCard = ({cards,preparing,addCooking}) => {
                 <table className="mb-8">
                     <thead>
                         <tr className="text-xl opacity-60 ">
-                             <th colSpan={2} className="px-4 lg:px-14">Name</th>
-                             <th className="px-4 lg:px-14">Time</th>
-                             <th className="px-4 lg:px-14">Calories</th>
+                             <th colSpan={2} className="px-4 xl:px-14">Name</th>
+                             <th className="px-4 xl:px-14">Time</th>
+                             <th className="px-4 xl:px-14">Calories</th>
                         </tr>
                     </thead>
                 </table>
@@ -51,9 +51,9 @@ const CookingCard = ({cards,preparing,addCooking}) => {
                 <table>
                     <thead>
                         <tr className="text-xl opacity-60 mb-8 ">
-                             <th  className="px-7 lg:px-16">Name</th>
-                             <th className="px-7 lg:px-16">Time</th>
-                             <th className="px-7 lg:px-16">Calories</th>
+                             <th  className="px-7 xl:px-16">Name</th>
+                             <th className="px-7 xl:px-16">Time</th>
+                             <th className="px-7 xl:px-16">Calories</th>
                         </tr>
                     </thead>
 
